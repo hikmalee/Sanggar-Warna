@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6d5ce8">
+  <meta name="description" content="Sanggar Warna Creative Hub — ruang belajar, berkarya, dan meraih prestasi.">
+  <title>Sanggar Warna Creative Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="toast-root" aria-live="polite"></div>
+  <section id="auth-screen" class="auth-screen">
+    <div class="auth-art">
+      <div class="spark s1">✦</div><div class="spark s2">✧</div><div class="spark s3">✦</div>
+      <div class="brand-mark">✿</div>
+      <div class="mascot" aria-label="Maskot Sanggar Warna">
+        <div class="mascot-hair"></div><div class="mascot-eye left"></div><div class="mascot-eye right"></div>
+        <div class="mascot-cheek left"></div><div class="mascot-cheek right"></div><div class="mascot-smile"></div>
+      </div>
+      <h1>Waktunya<br><span>berkreasi!</span></h1>
+      <p>Belajar seni, temukan ide, kumpulkan karya, dan tumbuh bersama Sanggar Warna.</p>
+      <div class="art-pills"><span>Belajar</span><span>Berkarya</span><span>Berprestasi</span></div>
+    </div>
+    <div class="auth-panel">
+      <div class="auth-brand"><span class="brand-icon">✿</span><span>Sanggar Warna<small>CREATIVE HUB</small></span></div>
+      <div class="auth-tabs"><button class="tab active" data-auth-tab="login">Masuk</button><button class="tab" data-auth-tab="register">Daftar</button></div>
+      <form id="login-form" class="auth-form">
+        <h2>Halo, Kreator!</h2><p class="muted">Masuk untuk melanjutkan petualangan kreatifmu.</p>
+        <label>Email<input name="email" type="email" placeholder="nama@email.com" required></label>
+        <label>Kata sandi<input name="password" type="password" placeholder="Masukkan kata sandi" required minlength="6"></label>
+        <button class="btn primary wide" type="submit">Masuk ke aplikasi <span>→</span></button>
+        <button class="text-button" type="button" id="forgot-password">Lupa kata sandi?</button>
+      </form>
+      <form id="register-form" class="auth-form hidden">
+        <h2>Buat akun baru</h2><p class="muted">Mulai perjalanan kreatifmu bersama kami.</p>
+        <label>Nama lengkap<input name="name" placeholder="Nama lengkap" required></label>
+        <label>Email<input name="email" type="email" placeholder="nama@email.com" required></label>
+        <label>Kata sandi<input name="password" type="password" placeholder="Minimal 6 karakter" required minlength="6"></label>
+        <label>Daftar sebagai<select name="role"><option value="student">Siswa</option><option value="parent">Orang tua/wali</option></select></label>
+        <button class="btn primary wide" type="submit">Buat akun <span>→</span></button>
+      </form>
+      <div class="demo-box">
+        <div><strong>Ingin mencoba dulu?</strong><small>Gunakan mode demo tanpa konfigurasi backend.</small></div>
+        <button class="btn soft" id="demo-login">Coba Demo</button>
+      </div>
+      <p class="auth-foot">Dengan masuk, kamu menyetujui ketentuan penggunaan dan kebijakan privasi Sanggar Warna.</p>
+    </div>
+  </section>
+
+  <div id="app-shell" class="app-shell hidden">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand"><span class="brand-icon">✿</span><span>Sanggar Warna<small>CREATIVE HUB</small></span></div>
+      <div class="profile-mini"><div class="avatar" id="side-avatar">S</div><div><strong id="side-name">Siswa</strong><small id="side-role">Siswa</small></div><span class="online-dot"></span></div>
+      <nav id="main-nav" class="main-nav"></nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-tip"><span>🌈</span><div><strong>Terus berkarya!</strong><small>Setiap karya punya cerita.</small></div></div>
+        <button class="nav-link" id="settings-button"><span>⚙️</span> Pengaturan</button>
+        <button class="nav-link logout" id="logout-button"><span>↪</span> Keluar</button>
+      </div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar">
+        <button class="icon-btn mobile-menu" id="mobile-menu" aria-label="Buka menu">☰</button>
+        <div class="breadcrumb"><span>Workspace</span><b>/</b><strong id="page-name">Dashboard</strong></div>
+        <div class="top-actions"><span class="mode-chip" id="mode-chip">DEMO MODE</span><button class="icon-btn notification-button" id="notification-button" aria-label="Notifikasi">♧<i></i></button><div class="top-avatar" id="top-avatar">S</div></div>
+      </header>
+      <div id="page-content" class="page-content"></div>
+      <footer class="app-footer">© 2026 Sanggar Warna Creative Hub <span>Belajar • Berkarya • Berprestasi</span></footer>
+    </main>
+  </div>
+
+  <dialog id="modal" class="modal"><div class="modal-card"><div class="modal-head"><h3 id="modal-title">Tambah data</h3><button class="icon-btn" id="modal-close">✕</button></div><form id="modal-form"><div id="modal-fields" class="modal-fields"></div><div class="modal-actions"><button type="button" class="btn soft" id="modal-cancel">Batal</button><button type="submit" class="btn primary">Simpan</button></div></form></div></dialog>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
